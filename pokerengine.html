@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<SCRIPT TYPE="text/javascript" src="javascript/poker.js"></SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- start
+ccount = 1;
+for (var w=1;w<=20;w++) 
+{
+	q1=Math.floor(Math.random()*52)+1;
+	q2=Math.floor(Math.random()*52)+1;
+	if (q1==q2) 
+	{
+		w--;
+	}
+	else 
+	{
+		tmp = ca[q1];
+		ca[q1]=ca[q2];
+		ca[q2]=tmp;
+	}
+}
+// end -->
+</SCRIPT>
+	<FORM>
+		<TABLE WIDTH="100%" STYLE="border-collapse: separate; border-spacing: 4px;">
+			</TR>
+				<TR STYLE=" background: #FFFFFF;">
+				<TD WIDTH="50%" ALIGN="center" STYLE="border: 2px solid #ccc; text-align: center;">
+					<INPUT TYPE="button" NAME="shuffled" VALUE="Start New Game" onClick="StartNewGame(this.form)">
+				</TD>
+				<TD WIDTH="50%" ALIGN="center" STYLE="border: 2px solid #ccc; text-align: center;">
+					<INPUT TYPE="button" NAME="dealc" VALUE="Deal Cards" onClick="GetDealCards(this.form)">
+				</TD>	
+			</TR>
+			<TR STYLE=" background: #F5DA81;">
+				<TD WIDTH="50%" ALIGN="center" STYLE="border: 2px solid #ccc; text-align: center;">COMPUTER BALANCE</TD>
+				<TD WIDTH="50%" ALIGN="center" STYLE="border: 2px solid #ccc; text-align: center;">YOUR BALANCE</TD>
+			</TR>
+			<TR STYLE=" background: #BCF5A9;">
+				<TD WIDTH="50%" ALIGN="center" STYLE="border: 2px solid #ccc; text-align: center;">$<INPUT TYPE="text" NAME="ComputerBalance" ID="ComputerBalance" VALUE="1000" READONLY></TD>
+				<TD WIDTH="50%" ALIGN="center" STYLE="border: 2px solid #ccc; text-align: center;">$<INPUT TYPE="text" NAME="yourBalance" ID="yourBalance" VALUE="1000" READONLY></TD>
+			<TR STYLE=" background: #F5DA81;">
+				<TD WIDTH="50%" ALIGN="center" STYLE="border: 2px solid #ccc; text-align: center;">ANTE BET</TD>
+				<TD WIDTH="50%" ALIGN="center" STYLE="border: 2px solid #ccc; text-align: center;">
+					$<INPUT TYPE="text" NAME="ante_bet" ID="ante_bet" VALUE="10" READONLY>
+				</TD>
+			</TR>
+			<TR STYLE=" background: #BCF5A9;">
+				<TD WIDTH="50%" ALIGN="center" STYLE="border: 2px solid #ccc; text-align: center;"><FONT STYLE="font-size: 11;">Click Numbers To Replace Cards From Right (Max 4 Cards)</TD>
+				<TD WIDTH="50%" ALIGN="center" STYLE="border: 2px solid #ccc; text-align: center;">
+					<INPUT TYPE="button" NAME="carda" VALUE=" 1 " onClick="RePlaceCard(this.form, 1)">&nbsp;&nbsp;
+					<INPUT TYPE="button" NAME="cardb" VALUE=" 2 " onClick="RePlaceCard(this.form, 2)">&nbsp;&nbsp;
+					<INPUT TYPE="button" NAME="cardc" VALUE=" 3 " onClick="RePlaceCard(this.form, 3)">&nbsp;&nbsp;
+					<INPUT TYPE="button" NAME="cardd" VALUE=" 4 " onClick="RePlaceCard(this.form, 4)">&nbsp;&nbsp;
+					<INPUT TYPE="button" NAME="carde" VALUE=" 5 " onClick="RePlaceCard(this.form, 5)">&nbsp;&nbsp;&nbsp;
+					<INPUT TYPE="button" NAME="doned" VALUE=" Draw Card " onClick="DrawCard(this.form)">
+				</TD>
+			</TR>
+			<TR STYLE=" background: #F5DA81;">
+				<TD WIDTH="50%" ALIGN="center" STYLE="border: 2px solid #ccc; text-align: center;">YOUR BET</TD>
+				<TD WIDTH="50%" ALIGN="center" STYLE="border: 2px solid #ccc; text-align: center;">
+					<INPUT TYPE="radio" NAME="bets" VALUE="" CHECKED onClick="SetMyBet(this.form, 0)">0
+					<INPUT TYPE="radio" NAME="bets" VALUE="" onClick="SetMyBet(this.form, 50)">50
+					<INPUT TYPE="radio" NAME="bets" VALUE="" onClick="SetMyBet(this.form, 100)">100
+					<INPUT TYPE="radio" NAME="bets" VALUE="" onClick="SetMyBet(this.form, 150)">150
+					<INPUT TYPE="radio" NAME="bets" VALUE="" onClick="SetMyBet(this.form, 200)">$200
+				</TD>
+			</TR>
+			<TR STYLE=" background: #F5DA81;">
+				<TD WIDTH="50%" ALIGN="center" STYLE="border: 2px solid #ccc; text-align: center;">COMPUTER'S BET</TD>
+				<TD WIDTH="50%" ALIGN="center" STYLE="border: 2px solid #ccc; text-align: center;">
+					<INPUT TYPE="text" NAME="obet" Value="" SIZE="5" MAXSIZE="5">
+				</TD>
+			</TR>
+			<TR STYLE=" background: #F5DA81;">
+				<TD WIDTH="50%" ALIGN="center" STYLE="border: 2px solid #ccc; text-align: center;">
+					<INPUT TYPE="button" NAME="call" VALUE=" CALL " onClick="CheckDrawAndShowResult(this.form)">
+				</TD>
+				<TD WIDTH="50%" ALIGN="center" STYLE="border: 2px solid #ccc; text-align: center;">
+					<INPUT TYPE="text" NAME="win" Value="Who won?" SIZE="45" MAXSIZE="45">
+				</TD>
+			</TR>
+		</TABLE>
+	</FORM>
+</BODY>
+</HTML>
